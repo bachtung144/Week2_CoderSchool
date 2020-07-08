@@ -1,6 +1,5 @@
-"# Week2_CoderSchool" 
-###Assignment
+#Assignment ở file App1
 ![Farmers Market Finder Demo](assets/ass2.gif)
 
-###Lab
+#Lab ở file App2
 ![Farmers Market Finder Demo](assets/Lab2.gif)

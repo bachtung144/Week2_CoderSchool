@@ -8,7 +8,7 @@ import pic2 from './assets/pic2.jpg';
 import pic3 from './assets/pic3.jpg';
 import pic4 from './assets/pic4.jpg';
 import pic5 from './assets/pic5.jpg';
-
+import {styleApp2} from './Style/StyleApp2';
 const feedData = [
   {
     id: 1,
@@ -48,74 +48,41 @@ const feedData = [
 ];
 function Item({name, image, likeCount, avatar}) {
   return (
-    <View style={{flex: 1, marginTop: 10}}>
-      {/*AVT*/}
-      <View
-        style={{flexDirection: 'row', alignItems: 'center', marginLeft: 10}}>
-        <Image
-          resizeMode={'cover'}
-          source={avatar}
-          style={{height: 50, width: 50, borderRadius: 25}}
-        />
-        <Text style={{fontSize: 17, fontWeight: 'bold', marginLeft: 15}}>
-          {name}
-        </Text>
+    <View style={styleApp2.ctnItem}>
+      {/*Avatar*/}
+      <View style={styleApp2.ctnAvtItem}>
+        <Image resizeMode={'cover'} source={avatar} style={styleApp2.avtItem} />
+        <Text style={styleApp2.name}>{name}</Text>
       </View>
       {/*Picture*/}
-      <Image
-        source={image}
-        style={{height: 400, width: '100%', marginTop: 10}}
-        resizeMode={'cover'}
-      />
+      <Image source={image} style={styleApp2.picUpload} resizeMode={'cover'} />
       {/*Tool*/}
-      <View style={{flexDirection: 'row', marginTop: 10}}>
+      <View style={styleApp2.ctnTool}>
         <Feather
           name={'heart'}
-          style={{fontSize: 30, marginLeft: 15}}
+          style={styleApp2.iconTool}
           onPress={() => alert('Like')}
         />
         <MaterialIcons
           name={'chat-bubble-outline'}
-          style={{fontSize: 30, marginLeft: 15}}
+          style={styleApp2.iconTool}
           onPress={() => alert('Comment')}
         />
         <Feather
           name={'share'}
-          style={{fontSize: 30, marginLeft: 15}}
+          style={styleApp2.iconTool}
           onPress={() => alert('Share')}
         />
       </View>
       {/*Line*/}
-      <View
-        style={{
-          width: '100%',
-          backgroundColor: 'gray',
-          height: 0.5,
-          marginTop: 10,
-        }}
-      />
+      <View style={styleApp2.line} />
       {/*Like*/}
-      <View
-        style={{
-          marginLeft: 15,
-          marginTop: 10,
-          flexDirection: 'row',
-          alignItems: 'center',
-        }}>
-        <FontAwesome name={'heart'} style={{fontSize: 30}} />
-        <Text style={{fontSize: 15, fontWeight: 'bold', marginLeft: 10}}>
-          {likeCount} likes
-        </Text>
+      <View style={styleApp2.ctnCountLike}>
+        <FontAwesome name={'heart'} style={styleApp2.iconLiked} />
+        <Text style={styleApp2.txtCountLike}>{likeCount} likes</Text>
       </View>
       {/*Line*/}
-      <View
-        style={{
-          width: '100%',
-          backgroundColor: 'gray',
-          height: 0.5,
-          marginTop: 10,
-        }}
-      />
+      <View style={styleApp2.line} />
     </View>
   );
 }
@@ -123,26 +90,16 @@ export default function App2() {
   return (
     <SafeAreaView>
       {/*Header*/}
-      <View
-        style={{
-          flexDirection: 'row',
-          backgroundColor: '#f3f6fa',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}>
-        <View style={{width: 27}} />
+      <View style={styleApp2.ctnLogo}>
         <Image
           source={{
             uri:
               'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png',
           }}
-          style={{
-            flex: 1,
-            height: 44,
-          }}
+          style={styleApp2.imgLogo}
           resizeMode="contain"
         />
-        <Feather name={'inbox'} style={{fontSize: 27, marginRight: 5}} />
+        <Feather name={'inbox'} style={styleApp2.iconInbox} />
       </View>
 
       {/*Body*/}
