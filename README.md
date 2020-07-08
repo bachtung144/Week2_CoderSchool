@@ -1,4 +1,4 @@
-# Assignment ở file App1
+# Assignment ở file App
 ![Farmers Market Finder Demo](assets/ass2.gif)
 
 # Lab ở file App2
